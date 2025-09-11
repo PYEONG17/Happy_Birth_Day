@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .perspective-2000 {
+        perspective: 3000px; /* Increased for a more dramatic 3D effect */
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'pacifico': ['Pacifico', 'cursive'],
+              'quicksand': ['Quicksand', 'sans-serif'],
+            },
+            keyframes: {
+              heartbeat: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              sway: {
+                '0%, 100%': { transform: 'rotate(-1deg)' },
+                '50%': { transform: 'rotate(1deg)' },
+              },
+              openGift: {
+                '0%': { transform: 'translateY(0) rotate(0deg) translateX(-50%)', opacity: '1' },
+                '50%': { transform: 'translateY(-80px) rotate(-15deg) translateX(-50%)', opacity: '1' },
+                '100%': { transform: 'translateY(-100px) rotate(-20deg) translateX(-50%)', opacity: '0' },
+              },
+            },
+            animation: {
+              heartbeat: 'heartbeat 1.5s ease-in-out infinite',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'sway': 'sway 4s ease-in-out infinite alternate',
+              'open-gift': 'openGift 0.7s ease-in-out forwards',
+            }
+          },
+        },
+      }
+    </script>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-B87_cqqM.js"></script>
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
