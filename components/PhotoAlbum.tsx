@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { ALBUM_IMAGES } from '../constants';
-import ArrowLeftIcon from './icons/ArrowLeftIcon';
-import ArrowRightIcon from './icons/ArrowRightIcon';
+import React, { useState } from "react";
+import { ALBUM_IMAGES } from "../constants";
+import ArrowLeftIcon from "./icons/ArrowLeftIcon";
+import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 interface PhotoAlbumProps {
   onClose: () => void;
@@ -25,7 +25,7 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ onClose }) => {
       setCurrentSpread(currentSpread - 1);
     }
   };
-  
+
   const leftImageIndex = currentSpread * 2;
   const rightImageIndex = currentSpread * 2 + 1;
 
@@ -38,7 +38,7 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ onClose }) => {
       <div className="relative w-[95vw] max-w-4xl aspect-[2/1.4] md:aspect-[2/1.2] bg-stone-200 shadow-2xl rounded-lg flex p-2 md:p-3">
         {/* Book Spine */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-4 h-full bg-stone-300 shadow-inner z-10"></div>
-        
+
         {/* Left Page */}
         <div className="w-1/2 p-2 md:p-4 bg-stone-50 rounded-l-md">
           {currentSpread === -1 ? (
@@ -47,8 +47,15 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ onClose }) => {
             </div>
           ) : (
             leftImage && (
-              <div key={leftImageIndex} className="w-full h-full animate-fade-in">
-                <img src={leftImage} alt={`Memory ${leftImageIndex + 1}`} className="w-full h-full object-cover rounded-md shadow-inner" />
+              <div
+                key={leftImageIndex}
+                className="w-full h-full animate-fade-in"
+              >
+                <img
+                  src={leftImage}
+                  alt={`Memory ${leftImageIndex + 1}`}
+                  className="w-full h-full object-cover rounded-md shadow-inner"
+                />
               </div>
             )
           )}
@@ -57,19 +64,34 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ onClose }) => {
         {/* Right Page */}
         <div className="w-1/2 p-2 md:p-4 bg-stone-50 rounded-r-md">
           {currentSpread === -1 ? (
-             <div className="w-full h-full bg-rose-800 flex flex-col items-center justify-center text-white p-4 rounded-r-md text-center">
-                <h2 className="font-pacifico text-3xl sm:text-4xl md:text-5xl">Our Memories</h2>
-                <p className="mt-4 text-xs md:text-sm font-quicksand">A look back at our journey</p>
+            <div className="w-full h-full bg-rose-800 flex flex-col items-center justify-center text-white p-4 rounded-r-md text-center">
+              <h2 className="font-pacifico text-3xl sm:text-4xl md:text-5xl">
+                Chibi notebook
+              </h2>
+              <h5 className="mt-4 text-xs md:text-sm font-quicksand">
+                Chị mình lật trang đi ạ ...!{" "}
+              </h5>
             </div>
           ) : (
-            <div key={rightImageIndex} className="w-full h-full animate-fade-in">
+            <div
+              key={rightImageIndex}
+              className="w-full h-full animate-fade-in"
+            >
               {rightImage ? (
-                  <img src={rightImage} alt={`Memory ${rightImageIndex + 1}`} className="w-full h-full object-cover rounded-md shadow-inner" />
+                <img
+                  src={rightImage}
+                  alt={`Memory ${rightImageIndex + 1}`}
+                  className="w-full h-full object-cover rounded-md shadow-inner"
+                />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-center">
                   <div>
-                    <h2 className="font-pacifico text-2xl md:text-3xl text-rose-800">The End</h2>
-                    <p className="mt-2 text-xs md:text-sm text-stone-500">...for now!</p>
+                    <h2 className="font-pacifico text-2xl md:text-3xl text-rose-800">
+                      The End
+                    </h2>
+                    <p className="mt-2 text-xs md:text-sm text-stone-500">
+                      ...for now!
+                    </p>
                   </div>
                 </div>
               )}
@@ -77,27 +99,27 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ onClose }) => {
           )}
         </div>
       </div>
-      
+
       {/* Navigation */}
       <div className="flex space-x-8 items-center">
-          <button 
-              onClick={handlePrev} 
-              disabled={currentSpread === -1} 
-              className="p-3 bg-white/70 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:bg-white hover:scale-110"
-              aria-label="Previous Page"
-          >
-              <ArrowLeftIcon className="w-6 h-6 text-rose-600" />
-          </button>
-          <span className="text-lg font-bold text-gray-600 w-20 text-center font-quicksand">
-            {currentSpread > -1 ? `Page ${currentSpread + 1}` : 'Cover'}
-          </span>
-          <button 
-              onClick={handleNext} 
-              className="p-3 bg-white/70 rounded-full shadow-lg transition-all hover:bg-white hover:scale-110"
-              aria-label="Next Page"
-          >
-              <ArrowRightIcon className="w-6 h-6 text-rose-600" />
-          </button>
+        <button
+          onClick={handlePrev}
+          disabled={currentSpread === -1}
+          className="p-3 bg-white/70 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:bg-white hover:scale-110"
+          aria-label="Previous Page"
+        >
+          <ArrowLeftIcon className="w-6 h-6 text-rose-600" />
+        </button>
+        <span className="text-lg font-bold text-gray-600 w-20 text-center font-quicksand">
+          {currentSpread > -1 ? `Page ${currentSpread + 1}` : "Cover"}
+        </span>
+        <button
+          onClick={handleNext}
+          className="p-3 bg-white/70 rounded-full shadow-lg transition-all hover:bg-white hover:scale-110"
+          aria-label="Next Page"
+        >
+          <ArrowRightIcon className="w-6 h-6 text-rose-600" />
+        </button>
       </div>
     </div>
   );

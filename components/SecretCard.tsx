@@ -21,16 +21,19 @@ const SecretCard: React.FC<SecretCardProps> = ({ onClose }) => {
           &times;
         </button>
         <h2 className="font-pacifico text-3xl text-pink-700 mb-4 text-center">
-          A Secret Note...
+          Tâm tư ...
         </h2>
         <p className="text-gray-600 text-center">
-          Just one more thing... You're not just a year older, you're a year
-          better, stronger, and more amazing. Never forget how special you are!
+          Chị mình là người đầu tiên khiến mình có cảm xúc đặc biệt như vậy.
           <br />
           <br />
-          With all the love,
+          Dù sao mình luôn đợi những tin nhắn từ chị nào chị mình cần người chia
+          sẻ em sẽ trồi lên như bụt lắng nghe và làm trò cho chị mình .😂
           <br />
-          Nguyen Tien Binh
+          Hẹn gặp chị mình vào ngày không xa !❤️
+          <br />
+          <br />
+          Pyeong
         </p>
       </div>
     </div>

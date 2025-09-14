@@ -5,7 +5,6 @@ import BirthdayCard from "./components/BirthdayCard";
 import PhotoAlbum from "./components/PhotoAlbum";
 import FinalMessage from "./components/FinalMessage";
 import SecretCard from "./components/SecretCard";
-
 const App: React.FC = () => {
   const [journeyState, setJourneyState] = useState<JourneyState>(
     JourneyState.INITIAL
